@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import List from './List';
+import STORE from './store';
 import './App.css';
+function App() {
+  const lists = STORE.lists.map((list)=>{
 
-class App extends Component {
-  render() {
+    return <List key={list.id} header={list.header} cards={list.cardIds}/>
+  });
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <main className="App">
+        <header className="App-header">
+
           <h2>Welcome to React</h2>
+        </header>
+        <div className="app-list">
+        {lists}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </main>
     );
-  }
 }
 
 export default App;
