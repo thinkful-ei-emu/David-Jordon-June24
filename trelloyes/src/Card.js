@@ -1,12 +1,16 @@
-import React from 'react';
-export default function Card(props){
+import React from "react";
+import "./Card.css";
+
+export default function Card(props) {
   return (
-  <div className="Card">
-     <h3>{props.title}</h3>
-     <p>{props.content}</p>
-      </div>);
+    <div className="Card">
+      <button type="button">Delete</button>
+      <h3>{props.title}</h3>
+      <p>{props.content}</p>
+    </div>
+  );
 }
 Card.defaultProps = {
-  title:'test',
-  content:'test'
-}
+  title: "test",
+  content: "test"
+};
